@@ -22,16 +22,16 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <Image
-                src="/logo.svg"
-                alt="Thai Soulmate logo"
-                width={44}
-                height={44}
-                className="size-11 rounded-2xl border border-border/70 bg-background shadow-sm"
+                src="/logo.png"
+                alt={`${APP_NAME} logo`}
+                width={72}
+                height={72}
+                className="size-11 shrink-0 rounded-2xl border border-border/70 bg-background object-cover shadow-sm"
               />
-              <div>
-                <p className="text-sm font-semibold">{APP_NAME}</p>
-                <p className="text-sm text-muted-foreground">
-                  Private matchmaking, presented with a quieter interface.
+              <div className="min-w-0">
+                <p className="truncate text-sm font-semibold">{APP_NAME}</p>
+                <p className="truncate text-sm text-muted-foreground">
+                  One to One Matchmaking
                 </p>
               </div>
             </div>

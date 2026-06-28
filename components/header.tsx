@@ -12,7 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { APP_NAME, CONTACT, SITE_NAV_LINKS } from "@/constants"
+import { APP_NAME, APP_TAGLINE, CONTACT, SITE_NAV_LINKS } from "@/constants"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
 
@@ -25,19 +25,19 @@ export function Header() {
       <div className="mx-auto flex w-full max-w-7xl min-h-16 items-center gap-2 px-4 py-3 sm:px-6 md:min-h-18 md:gap-3 md:py-0 lg:px-8">
         <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
           <Image
-            src="/logo.svg"
-            alt="Thai Soulmate logo"
-            width={40}
-            height={40}
-            className="size-9 rounded-2xl border border-border/70 bg-background shadow-sm sm:size-10"
+            src="/logo.png"
+            alt={`${APP_NAME} logo`}
+            width={72}
+            height={72}
+            className="size-10 shrink-0 rounded-2xl border border-border/70 bg-background object-cover shadow-sm sm:size-11"
             priority
           />
           <div className="min-w-0">
             <p className="truncate text-sm font-semibold leading-5 sm:text-[15px]">
               {APP_NAME}
             </p>
-            <p className="hidden truncate text-xs text-muted-foreground sm:block">
-              Private matchmaking with a calmer interface
+            <p className="truncate text-xs text-muted-foreground">
+              {APP_TAGLINE}
             </p>
           </div>
         </Link>

@@ -1,4 +1,4 @@
-export const APP_NAME = "Thai Soulmate"
+export const APP_NAME = "Siam Soulmates"
 export const APP_TAGLINE = "One to One Matchmaking"
 export const COMPANY_NAME = "Thai Angel Cupid Co., Ltd."
 
