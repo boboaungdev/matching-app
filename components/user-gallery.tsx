@@ -125,7 +125,7 @@ export function UserGallery() {
         </div>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
-      <div className="absolute inset-y-0 -right-4 z-10 hidden items-center md:flex">
+      <div className="absolute inset-y-0 right-0 z-10 hidden items-center md:flex">
         {!isLoading && users.length > 0 && (
           <Button
             variant="outline"

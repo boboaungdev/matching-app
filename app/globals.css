@@ -151,3 +151,28 @@
     background: hsl(var(--ring));
   }
 }
+
+@layer utilities {
+  @keyframes bg-pan {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .bg-animated-gradient {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)),
+      hsl(var(--primary) / 0.4),
+      hsl(var(--muted))
+    );
+    background-size: 200% 200%;
+    animation: bg-pan 10s ease-in-out infinite;
+  }
+}
