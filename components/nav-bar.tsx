@@ -73,23 +73,13 @@ export function NavBar() {
         </nav>
 
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
-          <div className="hidden items-center gap-2 lg:flex">
-            <Button asChild variant="outline" size="sm" className="rounded-md">
-              <Link href="/sign-in">
-                <LogIn className="size-4" />
-                Sign in
-              </Link>
-            </Button>
-            <Button asChild size="sm" className="rounded-md">
-              <Link href="/sign-up">
-                <UserPlus className="size-4" />
-                Sign up
-              </Link>
-            </Button>
-          </div>
-
           <ThemeToggle />
           <LanguageSwitcher />
+          <div className="hidden items-center gap-2 lg:flex">
+            <Button asChild className="rounded-md">
+              <Link href="/auth?mode=signup">Get Started</Link>
+            </Button>
+          </div>
 
           <div className="lg:hidden">
             <Sheet>
@@ -124,20 +114,11 @@ export function NavBar() {
                   ))}
                   <SheetClose asChild>
                     <div
-                      onClick={() => router.push("/sign-in")}
-                      className="flex cursor-pointer items-center justify-between rounded-md border border-input bg-background px-3 py-2.5 hover:bg-accent hover:text-accent-foreground"
-                    >
-                      <span>Sign in</span>
-                      <LogIn className="size-4 text-muted-foreground" />
-                    </div>
-                  </SheetClose>
-                  <SheetClose asChild>
-                    <div
-                      onClick={() => router.push("/sign-up")}
+                      onClick={() => router.push("/auth?mode=signup")}
                       className="flex cursor-pointer items-center justify-between rounded-md bg-primary px-3 py-2.5 text-primary-foreground"
                     >
-                      <span>Sign up</span>
-                      <UserPlus className="size-4" />
+                      <span>Get Started</span>
+                      <ArrowUpRight className="size-4" />
                     </div>
                   </SheetClose>
                 </div>

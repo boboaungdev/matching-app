@@ -1,5 +1,4 @@
-"use client"
-
+import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
@@ -28,16 +27,22 @@ interface RandomUser {
   }
 }
 
+import {
+  ScrollArea,
+  ScrollBar,
+} from "@/components/ui/scroll-area"
+
 export function UserGallery() {
   const [users, setUsers] = useState<RandomUser[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const viewportRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     async function fetchUsers() {
       try {
         const response = await fetch(
-          "https://randomuser.me/api/?results=10&gender=male&nat=us,gb,au,ca,nz,ie"
+          "https://randomuser.me/api/?results=20&gender=male&nat=us,gb,au,ca,nz,ie"
         )
         if (!response.ok) {
           throw new Error("Failed to fetch users")
@@ -55,12 +60,12 @@ export function UserGallery() {
   }, [])
 
   const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
+    if (viewportRef.current) {
       const scrollAmount =
         direction === "left"
-          ? -scrollContainerRef.current.clientWidth
-          : scrollContainerRef.current.clientWidth
-      scrollContainerRef.current.scrollBy({
+          ? -viewportRef.current.clientWidth
+          : viewportRef.current.clientWidth
+      viewportRef.current.scrollBy({
         left: scrollAmount,
         behavior: "smooth",
       })
@@ -81,42 +86,45 @@ export function UserGallery() {
           </Button>
         )}
       </div>
-      <div
-        ref={scrollContainerRef}
-        className="flex w-full [scrollbar-width:none] gap-6 overflow-x-auto scroll-smooth pb-4 md:overflow-hidden"
-      >
-        {isLoading
-          ? Array.from({ length: 5 }).map((_, index) => (
-              <Card
-                key={index}
-                className="relative h-[380px] w-[280px] shrink-0 overflow-hidden"
-              >
-                <Skeleton className="size-full" />
-              </Card>
-            ))
-          : users.map((user) => (
-              <Card
-                key={user.login.uuid}
-                className="group relative h-[380px] w-[280px] shrink-0 overflow-hidden"
-              >
-                <Image
-                  src={user.picture.large}
-                  alt={`${user.name.first} ${user.name.last}`}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                  <p className="text-lg font-semibold">
-                    {user.name.first} {user.name.last}, {user.dob.age}
-                  </p>
-                  <p className="text-sm">
-                    {user.location.city}, {user.location.country}
-                  </p>
-                </div>
-              </Card>
-            ))}
-      </div>
+      <ScrollArea className="w-full pb-4" viewportRef={viewportRef}>
+        <div ref={scrollContainerRef} className="flex w-full gap-6">
+          {isLoading
+            ? Array.from({ length: 5 }).map((_, index) => (
+                <Card
+                  key={index}
+                  className="relative h-[380px] w-[280px] shrink-0 overflow-hidden"
+                >
+                  <Skeleton className="size-full" />
+                </Card>
+              ))
+            : users.map((user) => (
+                <Link
+                  href="/auth?mode=signup"
+                  key={user.login.uuid}
+                  className="block"
+                >
+                  <Card className="group relative h-[380px] w-[280px] shrink-0 overflow-hidden">
+                    <Image
+                      src={user.picture.large}
+                      alt={`${user.name.first} ${user.name.last}`}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+                      <p className="text-lg font-semibold">
+                        {user.name.first} {user.name.last}, {user.dob.age}
+                      </p>
+                      <p className="text-sm">
+                        {user.location.city}, {user.location.country}
+                      </p>
+                    </div>
+                  </Card>
+                </Link>
+              ))}
+        </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
       <div className="absolute inset-y-0 -right-4 z-10 hidden items-center md:flex">
         {!isLoading && users.length > 0 && (
           <Button

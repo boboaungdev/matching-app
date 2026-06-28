@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { APP_NAME, APP_TAGLINE } from "@/constants"
@@ -19,7 +21,7 @@ export default function HomePage() {
           <p className="text-lg text-white/90 md:text-xl">{APP_TAGLINE}</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg">
-              <Link href="/sign-up">Get Started</Link>
+              <Link href="/auth">Get Started</Link>
             </Button>
             <Button
               asChild
