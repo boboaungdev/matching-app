@@ -7,11 +7,14 @@ import { Menu, ArrowUpRight, LogIn, UserPlus } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetClose,
+  SheetHeader,
+  SheetTitle
+} from "@/components/ui/sheet"
+
 import { APP_NAME, APP_TAGLINE, SITE_NAV_LINKS } from "@/constants"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
@@ -82,40 +85,55 @@ export function Header() {
           <ThemeToggle />
 
           <div className="lg:hidden">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
+            <Sheet>
+              <SheetTrigger asChild>
                 <Button variant="outline" size="icon-sm" className="rounded-full">
                   <Menu className="size-4" />
                   <span className="sr-only">Open menu</span>
                 </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-72">
-                {SITE_NAV_LINKS.map((item) => (
-                  <DropdownMenuItem
-                    key={item.href}
-                    className="cursor-pointer justify-between px-3 py-2.5 mb-2"
-                    onSelect={() => router.push(item.href)}
-                  >
-                    <span>{item.label}</span>
-                    <ArrowUpRight className="size-4 text-muted-foreground" />
-                  </DropdownMenuItem>
-                ))}
-                <DropdownMenuItem
-                  className="cursor-pointer justify-between px-3 py-2.5 mb-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground"
-                  onSelect={() => router.push("/sign-in")}
-                >
-                  <span>Sign in</span>
-                  <LogIn className="size-4 text-muted-foreground" />
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  className="cursor-pointer justify-between px-3 py-2.5 mb-2 bg-primary text-primary-foreground"
-                  onSelect={() => router.push("/sign-up")}
-                >
-                  <span>Sign up</span>
-                  <UserPlus className="size-4 text-muted-foreground" />
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-3/4 sm:max-w-sm flex flex-col">
+                <SheetHeader className="p-4 pb-2">
+                  <SheetTitle>Menu</SheetTitle>
+                </SheetHeader>
+                <div className="flex flex-col gap-2 px-4">
+                  {SITE_NAV_LINKS.map((item) => (
+                    <SheetClose asChild key={item.href}>
+                      <div
+                        onClick={() => router.push(item.href)}
+                        className="cursor-pointer justify-between px-3 py-2.5 flex items-center"
+                      >
+                        <span>{item.label}</span>
+                        <ArrowUpRight className="size-4 text-muted-foreground" />
+                      </div>
+                    </SheetClose>
+                  ))}
+                  <SheetClose asChild>
+                    <div
+                      onClick={() => router.push("/sign-in")}
+                      className="cursor-pointer justify-between px-3 py-2.5 flex items-center border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+                    >
+                      <span>Sign in</span>
+                      <LogIn className="size-4 text-muted-foreground" />
+                    </div>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <div
+                      onClick={() => router.push("/sign-up")}
+                      className="cursor-pointer justify-between px-3 py-2.5 flex items-center bg-primary text-primary-foreground"
+                    >
+                      <span>Sign up</span>
+                      <UserPlus className="size-4 text-muted-foreground" />
+                    </div>
+                  </SheetClose>
+                </div>
+                <SheetClose asChild>
+                  <Button variant="ghost" className="mt-auto p-4" size="sm">
+                    Close Menu
+                  </Button>
+                </SheetClose>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
