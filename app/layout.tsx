@@ -15,13 +15,11 @@ const fontMono = Geist_Mono({
 
 export default function RootLayout({
   children,
-  params: { lang },
 }: Readonly<{
   children: React.ReactNode
-  params: { lang: string }
 }>) {
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           "antialiased",
@@ -31,7 +29,7 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider>
-          <div className="relative flex min-h-screen flex-col">
+          <div className="relative flex min-h-screen flex-col overflow-x-clip">
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
