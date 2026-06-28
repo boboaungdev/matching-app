@@ -15,10 +15,18 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet"
 
-import { APP_NAME, APP_TAGLINE, SITE_NAV_LINKS } from "@/constants"
+import { APP_NAME, APP_TAGLINE } from "@/constants"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { cn } from "@/lib/utils"
+
+const SITE_NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
+  { label: "Service", href: "/#service" },
+  { label: "Gallery", href: "/#gallery" },
+] as const
 
 export function NavBar() {
   const pathname = usePathname()

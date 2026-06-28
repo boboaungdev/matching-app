@@ -10,7 +10,24 @@ import {
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { APP_NAME, CONTACT, PolicySection, SITE_NAV_LINKS } from "@/constants"
+import { APP_NAME, CONTACT } from "@/constants"
+
+const SITE_NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
+  { label: "Service", href: "/#service" },
+  { label: "Gallery", href: "/#gallery" },
+] as const
+
+type PolicySection = {
+  id: string
+  title: string
+  summary: string
+  paragraphs: string[]
+  bullets?: string[]
+  note?: string
+}
 
 type ContactAction = {
   label: string
@@ -58,8 +75,8 @@ function ContactLink({ action }: { action: ContactAction }) {
             <span className="text-sm font-medium">{action.label}</span>
             <span className="truncate text-xs text-muted-foreground">
               {action.href.includes("mailto:")
-                ? CONTACT.email.label
-                : CONTACT.whatsappPrimary.label}
+                ? CONTACT.email
+                : CONTACT.whatsapp}
             </span>
           </span>
         </span>

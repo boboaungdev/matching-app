@@ -3,7 +3,28 @@ import Image from "next/image"
 import { Mail, MessageCircle, ArrowUpRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { APP_NAME, CONTACT, SITE_NAV_LINKS, SOCIAL_LINKS } from "@/constants"
+import { APP_NAME, CONTACT } from "@/constants"
+
+const SITE_NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
+  { label: "Service", href: "/#service" },
+  { label: "Gallery", href: "/#gallery" },
+] as const
+
+const SOCIAL_LINKS = [
+  {
+    label: "WhatsApp",
+    href: `https://wa.me/${CONTACT.whatsapp}`,
+    icon: "message",
+  },
+  {
+    label: "Email",
+    href: `mailto:${CONTACT.email}`,
+    icon: "mail",
+  },
+] as const
 
 const iconMap = {
   message: MessageCircle,
@@ -51,7 +72,7 @@ export function Footer() {
                 className="rounded-full"
               >
                 <a
-                  href={CONTACT.whatsappPrimary.href}
+                  href={`https://wa.me/${CONTACT.whatsapp}`}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -65,7 +86,7 @@ export function Footer() {
                 size="sm"
                 className="rounded-full"
               >
-                <a href={CONTACT.email.href}>
+                <a href={`mailto:${CONTACT.email}`}>
                   <Mail className="size-4" />
                   Email
                 </a>
