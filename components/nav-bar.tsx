@@ -23,7 +23,6 @@ import { cn } from "@/lib/utils"
 const SITE_NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
   { label: "Service", href: "/#service" },
   { label: "Gallery", href: "/#gallery" },
 ] as const
