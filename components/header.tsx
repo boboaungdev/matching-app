@@ -42,7 +42,7 @@ export function Header() {
           </div>
         </Link>
 
-        <nav className="ml-2 hidden flex-1 items-center justify-center gap-1 md:flex">
+        <nav className="ml-2 hidden flex-1 items-center justify-center gap-1 lg:flex">
           {SITE_NAV_LINKS.map((item) => {
             const active = pathname === item.href
 
@@ -64,7 +64,7 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
-          <div className="hidden items-center gap-2 md:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             <Button asChild variant="ghost" size="sm" className="rounded-full">
               <Link href="/sign-in">
                 <LogIn className="size-4" />
@@ -81,7 +81,7 @@ export function Header() {
 
           <ThemeToggle />
 
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon-sm" className="rounded-full">
@@ -93,7 +93,7 @@ export function Header() {
                 {SITE_NAV_LINKS.map((item) => (
                   <DropdownMenuItem
                     key={item.href}
-                    className="cursor-pointer justify-between px-3 py-2.5"
+                    className="cursor-pointer justify-between px-3 py-2.5 mb-2"
                     onSelect={() => router.push(item.href)}
                   >
                     <span>{item.label}</span>
@@ -101,14 +101,14 @@ export function Header() {
                   </DropdownMenuItem>
                 ))}
                 <DropdownMenuItem
-                  className="cursor-pointer justify-between px-3 py-2.5"
+                  className="cursor-pointer justify-between px-3 py-2.5 mb-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground"
                   onSelect={() => router.push("/sign-in")}
                 >
                   <span>Sign in</span>
                   <LogIn className="size-4 text-muted-foreground" />
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  className="cursor-pointer justify-between px-3 py-2.5"
+                  className="cursor-pointer justify-between px-3 py-2.5 mb-2 bg-primary text-primary-foreground"
                   onSelect={() => router.push("/sign-up")}
                 >
                   <span>Sign up</span>
