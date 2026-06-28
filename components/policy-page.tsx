@@ -12,13 +12,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { APP_NAME, CONTACT } from "@/constants"
 
-const SITE_NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
-  { label: "Service", href: "/#service" },
-  { label: "Gallery", href: "/#gallery" },
-] as const
+
 
 type PolicySection = {
   id: string
@@ -155,23 +149,6 @@ export function PolicyPage({
                 </ol>
               </nav>
 
-              <div className="mt-4 rounded-2xl bg-card/70 p-4 shadow-sm">
-                <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
-                  Quick links
-                </p>
-                <div className="mt-2 grid gap-1">
-                  {SITE_NAV_LINKS.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="flex items-center justify-between rounded-xl px-2 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground"
-                    >
-                      <span>{item.label}</span>
-                      <ArrowUpRight className="size-4 text-muted-foreground" />
-                    </Link>
-                  ))}
-                </div>
-              </div>
             </aside>
 
             <article className="min-w-0 rounded-[2rem] bg-card/78 px-5 py-2 shadow-[0_24px_80px_-52px_color-mix(in_oklch,var(--foreground),transparent_60%)] backdrop-blur-sm sm:px-8 lg:px-10">
