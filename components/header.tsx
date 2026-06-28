@@ -17,6 +17,7 @@ import {
 
 import { APP_NAME, APP_TAGLINE, SITE_NAV_LINKS } from "@/constants"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { LanguageSwitcher } from "@/components/language-switcher"
 import { cn } from "@/lib/utils"
 
 export function Header() {
@@ -83,6 +84,7 @@ export function Header() {
           </div>
 
           <ThemeToggle />
+          <LanguageSwitcher />
 
           <div className="lg:hidden">
             <Sheet>
