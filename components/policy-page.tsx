@@ -93,7 +93,7 @@ export function PolicyPage({
           </Link>
 
           <header className="mt-8 max-w-3xl sm:mt-12">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/8 px-3 py-1.5 text-xs font-semibold tracking-wide text-primary uppercase">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary/8 px-3 py-1.5 text-xs font-semibold tracking-wide text-primary uppercase">
               {eyebrow === "Privacy" ? (
                 <ShieldCheck className="size-3.5" />
               ) : (
@@ -116,7 +116,7 @@ export function PolicyPage({
             <aside className="lg:sticky lg:top-32">
               <nav
                 aria-label={`${title} sections`}
-                className="rounded-2xl border border-border/70 bg-card/70 p-4 shadow-sm backdrop-blur-sm"
+                className="rounded-2xl bg-card/70 p-4 shadow-sm backdrop-blur-sm"
               >
                 <p className="px-2 pb-2 text-xs font-semibold tracking-wider text-muted-foreground uppercase">
                   On this page
@@ -138,7 +138,7 @@ export function PolicyPage({
                 </ol>
               </nav>
 
-              <div className="mt-4 rounded-2xl border border-border/70 bg-card/70 p-4 shadow-sm">
+              <div className="mt-4 rounded-2xl bg-card/70 p-4 shadow-sm">
                 <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">
                   Quick links
                 </p>
@@ -157,22 +157,22 @@ export function PolicyPage({
               </div>
             </aside>
 
-            <article className="min-w-0 rounded-[2rem] border border-border/70 bg-card/78 px-5 py-2 shadow-[0_24px_80px_-52px_color-mix(in_oklch,var(--foreground),transparent_60%)] backdrop-blur-sm sm:px-8 lg:px-10">
-              <div className="border-b border-border/70 py-8 sm:py-10">
+            <article className="min-w-0 rounded-[2rem] bg-card/78 px-5 py-2 shadow-[0_24px_80px_-52px_color-mix(in_oklch,var(--foreground),transparent_60%)] backdrop-blur-sm sm:px-8 lg:px-10">
+              <div className="py-8 sm:py-10">
                 <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-border/70 bg-muted/40 p-4">
+                  <div className="rounded-2xl bg-muted/40 p-4">
                     <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
                       Updated
                     </p>
                     <p className="mt-2 text-sm font-medium">{updatedOn}</p>
                   </div>
-                  <div className="rounded-2xl border border-border/70 bg-muted/40 p-4">
+                  <div className="rounded-2xl bg-muted/40 p-4">
                     <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
                       Brand
                     </p>
                     <p className="mt-2 text-sm font-medium">{APP_NAME}</p>
                   </div>
-                  <div className="rounded-2xl border border-border/70 bg-muted/40 p-4">
+                  <div className="rounded-2xl bg-muted/40 p-4">
                     <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">
                       Contact
                     </p>
@@ -186,7 +186,7 @@ export function PolicyPage({
                   {summaryPoints.map((point) => (
                     <span
                       key={point}
-                      className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background px-3 py-2 text-sm text-muted-foreground"
+                      className="inline-flex items-center gap-2 rounded-full bg-background px-3 py-2 text-sm text-muted-foreground"
                     >
                       <Check className="size-4 text-primary" />
                       {point}
@@ -199,7 +199,7 @@ export function PolicyPage({
                 <section
                   key={section.id}
                   id={section.id}
-                  className="scroll-mt-32 border-b border-border/70 py-8 last:border-b-0 sm:py-10"
+                  className="scroll-mt-32 py-8 sm:py-10"
                 >
                   <div className="flex items-baseline gap-3">
                     <span className="font-mono text-xs font-medium text-primary">
@@ -221,7 +221,7 @@ export function PolicyPage({
                       {section.bullets.map((bullet) => (
                         <li
                           key={bullet}
-                          className="rounded-2xl border border-border/70 bg-muted/40 px-4 py-3 text-sm text-muted-foreground"
+                          className="rounded-2xl bg-muted/40 px-4 py-3 text-sm text-muted-foreground"
                         >
                           {bullet}
                         </li>
@@ -230,17 +230,14 @@ export function PolicyPage({
                   ) : null}
 
                   {section.note ? (
-                    <div className="mt-6 rounded-2xl border border-primary/15 bg-primary/5 p-4 text-sm leading-6 text-muted-foreground">
+                    <div className="mt-6 rounded-2xl bg-primary/5 p-4 text-sm leading-6 text-muted-foreground">
                       {section.note}
                     </div>
                   ) : null}
                 </section>
               ))}
 
-              <section
-                id="contact"
-                className="scroll-mt-32 border-t border-border/70 py-8 sm:py-10"
-              >
+              <section id="contact" className="scroll-mt-32 pt-8 sm:pt-10">
                 <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
                   {contactTitle}
                 </h2>

@@ -28,7 +28,7 @@ export function AuthPage({
   return (
     <main className="min-h-[calc(100svh-7rem)] bg-gradient-to-b from-muted/20 to-background">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-center px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <section className="w-full max-w-xl rounded-[2rem] border border-border/70 bg-card/90 p-6 shadow-[0_24px_80px_-52px_color-mix(in_oklch,var(--foreground),transparent_60%)] backdrop-blur-sm sm:p-8">
+        <section className="w-full max-w-xl rounded-[2rem] bg-card/90 p-6 shadow-[0_24px_80px_-52px_color-mix(in_oklch,var(--foreground),transparent_60%)] backdrop-blur-sm sm:p-8">
           <div className="space-y-3 text-center">
             <p className="text-xs font-medium tracking-[0.28em] text-muted-foreground uppercase">
               {APP_TAGLINE}

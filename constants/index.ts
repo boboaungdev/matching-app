@@ -17,7 +17,7 @@ export const CONTACT = {
   },
   whatsappPrimary: {
     label: "+66 62 060 4000",
-    href: "https://wa.me/66620604000",
+    href: "https://wa.me/+66620604000",
   },
 } as const
 

@@ -33,7 +33,7 @@ export function NavBar() {
             alt={`${APP_NAME} logo`}
             width={72}
             height={72}
-            className="size-10 shrink-0 rounded-2xl border border-border/70 bg-background object-cover shadow-sm sm:size-11"
+            className="size-10 shrink-0 rounded-2xl bg-background object-cover shadow-sm sm:size-11"
             priority
           />
           <div className="min-w-0">
