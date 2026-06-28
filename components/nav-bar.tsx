@@ -12,7 +12,7 @@ import {
   SheetContent,
   SheetClose,
   SheetHeader,
-  SheetTitle
+  SheetTitle,
 } from "@/components/ui/sheet"
 
 import { APP_NAME, APP_TAGLINE, SITE_NAV_LINKS } from "@/constants"
@@ -20,13 +20,13 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { cn } from "@/lib/utils"
 
-export function Header() {
+export function NavBar() {
   const pathname = usePathname()
   const router = useRouter()
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
-      <div className="mx-auto flex w-full max-w-7xl min-h-16 items-center gap-2 px-4 py-3 sm:px-6 md:min-h-18 md:gap-3 md:py-0 lg:px-8">
+      <div className="mx-auto flex min-h-16 w-full max-w-7xl items-center gap-2 px-4 py-3 sm:px-6 md:min-h-18 md:gap-3 md:py-0 lg:px-8">
         <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
           <Image
             src="/logo.png"
@@ -37,7 +37,7 @@ export function Header() {
             priority
           />
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold leading-5 sm:text-[15px]">
+            <p className="truncate text-sm leading-5 font-semibold sm:text-[15px]">
               {APP_NAME}
             </p>
             <p className="truncate text-xs text-muted-foreground">
@@ -56,10 +56,7 @@ export function Header() {
                 asChild
                 variant={active ? "secondary" : "ghost"}
                 size="sm"
-                className={cn(
-                  "rounded-full px-3",
-                  active && "text-foreground"
-                )}
+                className={cn("rounded-full px-3", active && "text-foreground")}
               >
                 <Link href={item.href}>{item.label}</Link>
               </Button>
@@ -69,13 +66,13 @@ export function Header() {
 
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
           <div className="hidden items-center gap-2 lg:flex">
-            <Button asChild variant="ghost" size="sm" className="rounded-full">
+            <Button asChild variant="outline" size="sm" className="rounded-md">
               <Link href="/sign-in">
                 <LogIn className="size-4" />
                 Sign in
               </Link>
             </Button>
-            <Button asChild size="sm" className="rounded-full">
+            <Button asChild size="sm" className="rounded-md">
               <Link href="/sign-up">
                 <UserPlus className="size-4" />
                 Sign up
@@ -89,12 +86,19 @@ export function Header() {
           <div className="lg:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon-sm" className="rounded-full">
+                <Button
+                  variant="outline"
+                  size="icon-sm"
+                  className="rounded-full"
+                >
                   <Menu className="size-4" />
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-3/4 sm:max-w-sm flex flex-col">
+              <SheetContent
+                side="right"
+                className="flex w-3/4 flex-col sm:max-w-sm"
+              >
                 <SheetHeader className="p-4 pb-2">
                   <SheetTitle>Menu</SheetTitle>
                 </SheetHeader>
@@ -103,7 +107,7 @@ export function Header() {
                     <SheetClose asChild key={item.href}>
                       <div
                         onClick={() => router.push(item.href)}
-                        className="cursor-pointer justify-between px-3 py-2.5 flex items-center"
+                        className="flex cursor-pointer items-center justify-between px-3 py-2.5"
                       >
                         <span>{item.label}</span>
                         <ArrowUpRight className="size-4 text-muted-foreground" />
@@ -113,7 +117,7 @@ export function Header() {
                   <SheetClose asChild>
                     <div
                       onClick={() => router.push("/sign-in")}
-                      className="cursor-pointer justify-between px-3 py-2.5 flex items-center border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+                      className="flex cursor-pointer items-center justify-between rounded-md border border-input bg-background px-3 py-2.5 hover:bg-accent hover:text-accent-foreground"
                     >
                       <span>Sign in</span>
                       <LogIn className="size-4 text-muted-foreground" />
@@ -122,10 +126,10 @@ export function Header() {
                   <SheetClose asChild>
                     <div
                       onClick={() => router.push("/sign-up")}
-                      className="cursor-pointer justify-between px-3 py-2.5 flex items-center bg-primary text-primary-foreground"
+                      className="flex cursor-pointer items-center justify-between rounded-md bg-primary px-3 py-2.5 text-primary-foreground"
                     >
                       <span>Sign up</span>
-                      <UserPlus className="size-4 text-muted-foreground" />
+                      <UserPlus className="size-4" />
                     </div>
                   </SheetClose>
                 </div>
