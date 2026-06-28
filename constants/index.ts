@@ -1,6 +1,6 @@
 export const APP_NAME = "Siam Soulmates"
 export const APP_TAGLINE = "One to One Matchmaking"
-export const COMPANY_NAME = "Thai Angel Cupid Co., Ltd."
+export const COMPANY_NAME = "Siam Soulmates Co., Ltd."
 
 export const SITE_NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -16,8 +16,8 @@ export const CONTACT = {
     href: "mailto:contact@thaisoulmates.com",
   },
   whatsappPrimary: {
-    label: "+66 62 060 4940",
-    href: "https://wa.me/66620604940",
+    label: "+66 62 060 4000",
+    href: "https://wa.me/66620604000",
   },
 } as const
 

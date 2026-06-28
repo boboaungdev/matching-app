@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
-import { Menu, MessageCircle, Mail, ArrowUpRight } from "lucide-react"
+import { Menu, ArrowUpRight, LogIn, UserPlus } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -12,7 +12,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { APP_NAME, APP_TAGLINE, CONTACT, SITE_NAV_LINKS } from "@/constants"
+import { APP_NAME, APP_TAGLINE, SITE_NAV_LINKS } from "@/constants"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
 
@@ -64,22 +64,18 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
-          <div className="hidden items-center gap-2 xl:flex">
-            <Button asChild variant="outline" size="sm" className="rounded-full">
-              <a
-                href={CONTACT.whatsappPrimary.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <MessageCircle className="size-4" />
-                Chat
-              </a>
-            </Button>
+          <div className="hidden items-center gap-2 md:flex">
             <Button asChild variant="ghost" size="sm" className="rounded-full">
-              <a href={CONTACT.email.href}>
-                <Mail className="size-4" />
-                Email
-              </a>
+              <Link href="/sign-in">
+                <LogIn className="size-4" />
+                Sign in
+              </Link>
+            </Button>
+            <Button asChild size="sm" className="rounded-full">
+              <Link href="/sign-up">
+                <UserPlus className="size-4" />
+                Sign up
+              </Link>
             </Button>
           </div>
 
@@ -104,6 +100,20 @@ export function Header() {
                     <ArrowUpRight className="size-4 text-muted-foreground" />
                   </DropdownMenuItem>
                 ))}
+                <DropdownMenuItem
+                  className="cursor-pointer justify-between px-3 py-2.5"
+                  onSelect={() => router.push("/sign-in")}
+                >
+                  <span>Sign in</span>
+                  <LogIn className="size-4 text-muted-foreground" />
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="cursor-pointer justify-between px-3 py-2.5"
+                  onSelect={() => router.push("/sign-up")}
+                >
+                  <span>Sign up</span>
+                  <UserPlus className="size-4 text-muted-foreground" />
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
