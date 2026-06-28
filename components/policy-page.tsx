@@ -123,34 +123,7 @@ export function PolicyPage({
             </p>
           </header>
 
-          <div className="mt-12 grid items-start gap-10 lg:mt-16 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16">
-            <aside className="lg:sticky lg:top-32">
-              <nav
-                aria-label={`${title} sections`}
-                className="rounded-2xl bg-card/70 p-4 shadow-sm backdrop-blur-sm"
-              >
-                <p className="px-2 pb-2 text-xs font-semibold tracking-wider text-muted-foreground uppercase">
-                  On this page
-                </p>
-                <ol className="grid gap-0.5">
-                  {sections.map((section, index) => (
-                    <li key={section.id}>
-                      <Link
-                        href={`#${section.id}`}
-                        className="flex gap-3 rounded-xl px-2 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground"
-                      >
-                        <span className="font-mono text-xs leading-5 text-primary/80">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <span>{section.title}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ol>
-              </nav>
-
-            </aside>
-
+          <div className="mt-12 grid items-start gap-10 lg:mt-16 lg:grid-cols-[1fr] lg:gap-16">
             <article className="min-w-0 rounded-[2rem] bg-card/78 px-5 py-2 shadow-[0_24px_80px_-52px_color-mix(in_oklch,var(--foreground),transparent_60%)] backdrop-blur-sm sm:px-8 lg:px-10">
               <div className="py-8 sm:py-10">
                 <div className="grid gap-3 sm:grid-cols-3">

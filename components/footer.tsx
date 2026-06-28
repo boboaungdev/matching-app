@@ -58,12 +58,7 @@ export function Footer() {
               desktop, and clear enough to reach the right contact channel
               quickly.
             </p>
-          </div>
 
-          <div className="space-y-4">
-            <p className="text-xs font-medium tracking-[0.25em] text-muted-foreground uppercase">
-              Contact
-            </p>
             <div className="flex flex-wrap gap-2">
               <Button
                 asChild

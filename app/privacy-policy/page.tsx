@@ -6,68 +6,72 @@ const POLICY_UPDATED_ON = "June 28, 2026"
 const PRIVACY_SECTIONS = [
   {
     id: "information-we-collect",
-    title: "1. Information we collect",
+    title: "1. Information We Collect",
     summary:
-      "We only collect the details needed to provide a careful, private matchmaking service.",
+      "We collect personal information that you provide to us, information collected automatically, and information from third parties to operate our matchmaking service effectively.",
     paragraphs: [
-      "Information may include your name, contact details, age, date of birth, relationship preferences, profile photos, lifestyle details, communication history, and payment-related records.",
+      "To provide a personalized matchmaking experience, we need to collect certain information. This includes details you provide directly, data from your use of our service, and sometimes, information from other sources.",
     ],
     bullets: [
-      "Identity and contact information",
-      "Profile, preferences, and background details",
-      "Messages, consultation notes, and service records",
-      "Billing and transaction information",
+      "Account & Profile Information: Your name, email, phone number, birth date, gender, photos, and personal details you add to your profile (like interests, education, and lifestyle).",
+      "Communications: Records of your conversations with us, including customer support chats and feedback.",
+      "Usage Data: Information on how you use our services, such as your IP address, device type, and the features you interact with.",
+      "Payment Information: For premium services, we collect necessary billing information through our secure payment partners.",
     ],
   },
   {
-    id: "how-we-use",
-    title: "2. How we use information",
+    id: "how-we-use-information",
+    title: "2. How We Use Your Information",
     summary:
-      "Your data helps us screen, match, and communicate with you in a focused way.",
+      "Your information is primarily used to create your profile, facilitate matches, and ensure the safety and security of our members.",
     paragraphs: [
-      "We use your information to deliver matchmaking services, assess compatibility, manage your profile, coordinate introductions, and improve the quality of our client experience.",
-      "We may also use it to support private events, service follow-up, and related administrative work.",
+      "The data we collect is essential for the core functions of our service. We are committed to using your information responsibly and for the following purposes:",
+      "To create and manage your account, personalize your profile, and suggest potential matches based on compatibility.",
+      "To enable secure communication between you and our team, as well as with potential matches.",
+      "To protect our community by monitoring for and preventing fraudulent or harmful activity, and to enforce our Terms of Service.",
+      "To communicate with you about service updates, new features, or promotional offers that may be of interest to you.",
     ],
   },
   {
-    id: "sharing",
-    title: "3. Sharing and confidentiality",
+    id: "how-we-share-information",
+    title: "3. How We Share Your Information",
     summary:
-      "We share only what is necessary and only with the right people.",
+      "Your information is shared with potential matches as part of the service, with trusted service providers who help us operate, and for legal reasons when required.",
     paragraphs: [
-      "Your profile may be shown only to carefully selected and compatible members as part of the introduction process.",
-      "Trusted vendors may support payments or technical operations, but they are expected to protect confidentiality and use the data only for their assigned work.",
-    ],
-    note:
-      "We do not sell your personal information, and we limit access to authorized personnel who need it to do their jobs.",
-  },
-  {
-    id: "security",
-    title: "4. Security and retention",
-    summary:
-      "We use reasonable technical and organizational safeguards to keep your information protected.",
-    paragraphs: [
-      "We work to prevent unauthorized access, misuse, alteration, disclosure, and loss.",
-      "Personal information is retained only as long as needed for service delivery, relationship management, legal obligations, and dispute resolution.",
+      "Your privacy is paramount, and we only share information under specific circumstances:",
+      "With Other Members: Your public profile information is visible to potential matches. Your contact details are only shared with your consent.",
+      "With Service Providers: We partner with third-party companies for services like data hosting, payment processing, and marketing. They are bound by confidentiality obligations.",
+      "For Legal Obligations: We may disclose your information if required by law or to protect the safety of our members and the integrity of our service.",
+      "We do not sell your personal data to third parties.",
     ],
   },
   {
-    id: "rights",
-    title: "5. Your choices and rights",
+    id: "data-security",
+    title: "4. Data Security and Retention",
     summary:
-      "You can ask us to review, update, or remove your information when appropriate.",
+      "We implement robust security measures to protect your data and retain it only for as long as necessary.",
     paragraphs: [
-      "You may request access to your data, ask us to correct inaccuracies, withdraw consent for future use, or request removal from the active database.",
-      "We will process requests within a reasonable timeframe, subject to service commitments and legal requirements.",
+      "We take the security of your personal information seriously and use technical and administrative measures to protect it from unauthorized access or misuse.",
+      "However, no system is completely secure, and we cannot guarantee absolute security. We retain your information for as long as your account is active or as needed to provide you with our services and to comply with our legal obligations.",
     ],
   },
   {
-    id: "updates-contact",
-    title: "6. Policy updates and contact",
+    id: "your-rights",
+    title: "5. Your Rights and Choices",
     summary:
-      "We may update this policy from time to time, and we will keep the latest version on the website.",
+      "You have control over your personal information and can access, update, or request the deletion of your data.",
     paragraphs: [
-      "If you have a question about privacy, your profile, or how your information is handled, please contact our team using the details below.",
+      "You have the right to access the personal information we hold about you. You can also request that we correct any inaccuracies or delete your data.",
+      "You can manage your information through your account settings or by contacting our support team directly. Please note that we may need to retain certain information for legal or security reasons.",
+    ],
+  },
+  {
+    id: "policy-updates",
+    title: "6. Policy Updates and Contact",
+    summary:
+      "This policy may be updated periodically. We will notify you of significant changes.",
+    paragraphs: [
+      "We may update this Privacy Policy from time to time. The latest version will always be available on our website. For any questions or concerns about your privacy, please do not hesitate to contact us.",
     ],
   },
 ]
