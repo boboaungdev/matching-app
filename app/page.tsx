@@ -1,19 +1,20 @@
-import { Button } from "@/components/ui/button"
+import { APP_NAME, APP_TAGLINE } from "@/constants"
 
-export default function Page() {
+export default function Page({
+  params: { lang },
+}: {
+  params: { lang: string }
+}) {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
+    <section className="container grid items-center gap-6 pt-6 pb-8 md:py-10">
+      <div className="flex max-w-[980px] flex-col items-start gap-2">
+        <h1 className="text-3xl leading-tight font-extrabold tracking-tighter md:text-4xl">
+          Discover Your {APP_NAME}
+        </h1>
+        <p className="max-w-[700px] text-lg text-muted-foreground">
+          {APP_TAGLINE}
+        </p>
       </div>
-    </div>
+    </section>
   )
 }
