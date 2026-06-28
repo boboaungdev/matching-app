@@ -1,3 +1,10 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
 const faqs = [
   {
     question: "What is Siam Soulmates?",
@@ -19,20 +26,31 @@ const faqs = [
     answer:
       "Unlike typical dating apps, we provide a highly personalized and discreet service. We focus on quality over quantity, ensuring that you meet genuinely compatible individuals who are also seeking serious relationships.",
   },
+  {
+    question: "What are your service fees?",
+    answer:
+      "Our service fees vary based on the personalized matchmaking plan you choose. We offer different tiers designed to meet diverse needs and preferences. Please contact us for a detailed consultation and a customized quote.",
+  },
+  {
+    question: "What is your success rate?",
+    answer:
+      "While we cannot guarantee specific outcomes, Siam Soulmates prides itself on a high success rate due to our personalized approach and dedicated matchmakers. Many of our clients have found long-lasting relationships and marriages through our service.",
+  },
 ]
 
 export function Faq() {
   return (
-    <div className="mx-auto max-w-3xl space-y-6">
-      {faqs.map(faq => (
-        <div
-          key={faq.question}
-          className="rounded-lg border bg-background p-4"
-        >
-          <p className="font-semibold">{faq.question}</p>
-          <p className="mt-2 text-muted-foreground">{faq.answer}</p>
-        </div>
-      ))}
+    <div>
+      <Accordion type="single" collapsible className="w-full">
+        {faqs.map((faq) => (
+          <AccordionItem key={faq.question} value={faq.question}>
+            <AccordionTrigger className="text-lg">{faq.question}</AccordionTrigger>
+            <AccordionContent className="text-muted-foreground text-base">
+            {faq.answer}
+          </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
     </div>
   )
 }

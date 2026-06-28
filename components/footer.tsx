@@ -60,8 +60,11 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col gap-4 border-t border-border/70 pt-5 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>
-            Copyright &copy; {new Date().getFullYear()} {APP_NAME}. All rights
-            reserved.
+            Copyright &copy; {new Date().getFullYear()}{" "}
+            <Link href="/" className="hover:text-foreground">
+              {APP_NAME}
+            </Link>
+            . All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link href="/terms-of-service" className="hover:text-foreground">
