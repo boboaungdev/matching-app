@@ -1,108 +1,79 @@
 import { PolicyPage } from "@/components/policy-page"
-import { CONTACT } from "@/constants"
+import { APP_NAME, COMPANY_NAME, CONTACT } from "@/constants"
 
-const POLICY_UPDATED_ON = "June 28, 2026"
+const PRIVACY_POLICY_CONTENT = [
+  {
+    heading: "1. Introduction",
+    text: `Welcome to ${APP_NAME}. We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services. By using our service, you agree to the collection and use of information in accordance with this policy. This policy is managed by ${COMPANY_NAME}.`
+  },
+  {
+    heading: "2. Information We Collect",
+    text: `We may collect information about you in a variety of ways. The information we may collect on the Service includes:
 
-const PRIVACY_SECTIONS = [
-  {
-    id: "information-we-collect",
-    title: "1. Information We Collect",
-    summary:
-      "We collect personal information that you provide to us, information collected automatically, and information from third parties to operate our matchmaking service effectively.",
-    paragraphs: [
-      "To provide a personalized matchmaking experience, we need to collect certain information. This includes details you provide directly, data from your use of our service, and sometimes, information from other sources.",
-    ],
-    bullets: [
-      "Account & Profile Information: Your name, email, phone number, birth date, gender, photos, and personal details you add to your profile (like interests, education, and lifestyle).",
-      "Communications: Records of your conversations with us, including customer support chats and feedback.",
-      "Usage Data: Information on how you use our services, such as your IP address, device type, and the features you interact with.",
-      "Payment Information: For premium services, we collect necessary billing information through our secure payment partners.",
-    ],
+A. Personal Data:
+- Account Information: When you register, we collect personally identifiable information, such as your name, email address, date of birth, gender, photographs, and password.
+- Profile Information: To help build your profile, we may collect additional information such as details about your personality, lifestyle, interests, education, and relationship preferences.
+- Financial Data: We may collect financial information, such as data related to your payment method (e.g. valid credit card number, card brand, expiration date) when you purchase, order, return, or exchange. We store only very limited, if any, financial information that we collect. Otherwise, all financial information is stored by our payment processor.
+- Communication Data: If you contact us directly, we may receive additional information about you. We also store the communications you have with other users through our platform.
+
+B. Information Collected Automatically:
+- Usage Data: Information your browser automatically sends when you visit our site, such as your IP address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, and the time spent on those pages.
+- Device Information: We may collect information about your computer or mobile device, such as your device model, operating system, and unique device identifiers.`
   },
   {
-    id: "how-we-use-information",
-    title: "2. How We Use Your Information",
-    summary:
-      "Your information is primarily used to create your profile, facilitate matches, and ensure the safety and security of our members.",
-    paragraphs: [
-      "The data we collect is essential for the core functions of our service. We are committed to using your information responsibly and for the following purposes:",
-      "To create and manage your account, personalize your profile, and suggest potential matches based on compatibility.",
-      "To enable secure communication between you and our team, as well as with potential matches.",
-      "To protect our community by monitoring for and preventing fraudulent or harmful activity, and to enforce our Terms of Service.",
-      "To communicate with you about service updates, new features, or promotional offers that may be of interest to you.",
-    ],
+    heading: "3. How We Use Your Information",
+    text: `Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Service to:
+- Create and manage your account.
+- Fulfill and manage purchases, orders, payments, and other transactions related to the Service.
+- Deliver targeted advertising, coupons, newsletters, and other information regarding promotions and the Service to you.
+- Email you regarding your account or order.
+- Enable user-to-user communications.
+- Generate a personal profile about you to make future visits to the Service more personalized.
+- Increase the efficiency and operation of the Service.
+- Monitor and analyze usage and trends to improve your experience with the Service.
+- Prevent fraudulent transactions, monitor against theft, and protect against criminal activity.
+- Process payments and refunds.
+- Request feedback and contact you about your use of the Service.`
   },
   {
-    id: "how-we-share-information",
-    title: "3. How We Share Your Information",
-    summary:
-      "Your information is shared with potential matches as part of the service, with trusted service providers who help us operate, and for legal reasons when required.",
-    paragraphs: [
-      "Your privacy is paramount, and we only share information under specific circumstances:",
-      "With Other Members: Your public profile information is visible to potential matches. Your contact details are only shared with your consent.",
-      "With Service Providers: We partner with third-party companies for services like data hosting, payment processing, and marketing. They are bound by confidentiality obligations.",
-      "For Legal Obligations: We may disclose your information if required by law or to protect the safety of our members and the integrity of our service.",
-      "We do not sell your personal data to third parties.",
-    ],
+    heading: "4. Disclosure of Your Information",
+    text: `We may share information we have collected about you in certain situations. Your information may be disclosed as follows:
+
+- By Law or to Protect Rights: If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation.
+- Third-Party Service Providers: We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.
+- With other Users: Your profile information is visible to other registered users of the Service.
+- Business Transfers: We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.`
   },
   {
-    id: "data-security",
-    title: "4. Data Security and Retention",
-    summary:
-      "We implement robust security measures to protect your data and retain it only for as long as necessary.",
-    paragraphs: [
-      "We take the security of your personal information seriously and use technical and administrative measures to protect it from unauthorized access or misuse.",
-      "However, no system is completely secure, and we cannot guarantee absolute security. We retain your information for as long as your account is active or as needed to provide you with our services and to comply with our legal obligations.",
-    ],
+    heading: "5. Your Choices and Rights",
+    text: `You have certain rights regarding your personal information. You can:
+- Access, review, and update your account information at any time by logging into your account settings.
+- Opt-out of receiving marketing emails from us by following the unsubscribe link in those emails.
+- Close your account, which will remove your profile and data from active view. Please note that we may retain certain information for analytical purposes and recordkeeping integrity, as well as to prevent fraud, enforce our Terms of Service, take actions we deem necessary to protect the integrity of our Service or our users, or take other actions otherwise permitted by law.`
   },
   {
-    id: "your-rights",
-    title: "5. Your Rights and Choices",
-    summary:
-      "You have control over your personal information and can access, update, or request the deletion of your data.",
-    paragraphs: [
-      "You have the right to access the personal information we hold about you. You can also request that we correct any inaccuracies or delete your data.",
-      "You can manage your information through your account settings or by contacting our support team directly. Please note that we may need to retain certain information for legal or security reasons.",
-    ],
+    heading: "6. Data Security",
+    text: "We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse."
   },
   {
-    id: "policy-updates",
-    title: "6. Policy Updates and Contact",
-    summary:
-      "This policy may be updated periodically. We will notify you of significant changes.",
-    paragraphs: [
-      "We may update this Privacy Policy from time to time. The latest version will always be available on our website. For any questions or concerns about your privacy, please do not hesitate to contact us.",
-    ],
+    heading: "7. Policy for Children",
+    text: "We do not knowingly solicit information from or market to children under the age of 18. If you become aware of any data we have collected from children under age 18, please contact us using the contact information provided below."
   },
-]
+  {
+    heading: "8. Changes to This Privacy Policy",
+    text: "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes."
+  },
+  {
+    heading: "9. Contact Us",
+    text: `If you have questions or comments about this Privacy Policy, please contact us at: ${CONTACT.email}`
+  }
+];
 
 export default function PrivacyPolicyPage() {
   return (
     <PolicyPage
-      eyebrow="Legal / Privacy Policy"
-      title="Privacy handled with the same care as the matching process"
-      description="This policy explains what information we collect, how we use it, and how we keep member data confidential throughout the experience."
-      updatedOn={POLICY_UPDATED_ON}
-      summaryPoints={[
-        "Minimal data collection",
-        "Private profile handling",
-        "Reasonable security safeguards",
-      ]}
-      sections={PRIVACY_SECTIONS}
-      contactTitle="Need help with your data?"
-      contactDescription="If you want to review your profile, update details, or ask how your information is used, reach out to the team directly."
-      contactActions={[
-        {
-          label: "WhatsApp",
-          href: `https://wa.me/${CONTACT.whatsapp}`,
-          icon: "message",
-        },
-        {
-          label: "Email",
-          href: `mailto:${CONTACT.email}`,
-          icon: "mail",
-        },
-      ]}
+      title="Privacy Policy"
+      content={PRIVACY_POLICY_CONTENT}
     />
   )
 }

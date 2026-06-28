@@ -53,11 +53,7 @@ export function Footer() {
               </div>
             </div>
 
-            <p className="max-w-md text-sm leading-6 text-muted-foreground">
-              We keep the experience simple to browse on mobile, easy to scan on
-              desktop, and clear enough to reach the right contact channel
-              quickly.
-            </p>
+
 
             <div className="flex flex-wrap gap-2">
               <Button

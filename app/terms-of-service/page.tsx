@@ -1,114 +1,64 @@
 import { PolicyPage } from "@/components/policy-page"
-import { COMPANY_NAME, CONTACT } from "@/constants"
+import { APP_NAME, COMPANY_NAME, CONTACT } from "@/constants"
 
-const POLICY_UPDATED_ON = "June 28, 2026"
-
-const TERMS_SECTIONS = [
+const TERMS_OF_SERVICE_CONTENT = [
   {
-    id: "agreement-to-terms",
-    title: "1. Agreement to Terms",
-    summary:
-      "By using our service, you agree to these Terms of Service. You must be at least 18 years old to use our platform.",
-    paragraphs: [
-      `Welcome to ${APP_NAME}. These Terms of Service ('Terms') govern your use of our matchmaking services. By creating an account, you confirm that you are at least 18 years old and legally capable of entering into a binding agreement.`,
-      "You also warrant that you have never been convicted of a felony and are not required to register as a sex offender with any government entity.",
-    ],
+    heading: "1. Agreement to Terms",
+    text: `By creating an account and using the services provided by ${APP_NAME} ("Service"), you agree to be bound by these Terms of Service ("Terms"). This agreement is a legally binding contract between you and ${COMPANY_NAME}. If you do not agree with these Terms, you must not use our Service. You affirm that you are at least 18 years of age and are fully able and competent to enter into the terms, conditions, obligations, affirmations, representations, and warranties set forth in these Terms.`
   },
   {
-    id: "account-responsibilities",
-    title: "2. Your Account and Information",
-    summary:
-      "You are responsible for maintaining the confidentiality of your account and for providing accurate information.",
-    paragraphs: [
-      "To create a profile, you must provide accurate, current, and complete information. You are responsible for all activities that occur under your account.",
-      "We reserve the right to suspend or terminate accounts that provide false information or violate our terms.",
-    ],
-    note:
-      "The integrity of our community depends on the honesty and cooperation of our members. Please ensure your details are always up to date.",
+    heading: "2. Your Account",
+    text: "To access the Service, you must create an account. You agree to provide information that is accurate, complete, and current at all times. Inaccurate or incomplete information may result in the immediate termination of your account. You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password. You agree not to disclose your password to any third party and must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account."
   },
   {
-    id: "code-of-conduct",
-    title: "3. Code of Conduct",
-    summary:
-      "We expect all members to interact with others respectfully and honestly. Harassment and fraudulent activity are strictly prohibited.",
-    paragraphs: [
-      "You agree not to use the service for any unlawful purpose, to harass or harm others, or to misrepresent your identity. You are solely responsible for your interactions with other members.",
-    ],
-    bullets: [
-      "No harassment, abuse, or harmful behavior.",
-      "Do not post offensive or illegal content.",
-      "Do not impersonate any person or entity.",
-      "Commercial solicitation is not permitted.",
-    ],
+    heading: "3. User Conduct and Responsibilities",
+    text: `You agree to use the Service in a manner that is lawful, respectful, and honest. You are solely responsible for your interactions with other users. You agree not to:
+- Use the service for any purpose that is illegal or prohibited by these Terms.
+- Harass, intimidate, or threaten any other user.
+- Post or share content that is defamatory, obscene, pornographic, or otherwise offensive.
+- Impersonate any person or entity, or misrepresent your affiliation with a person or entity.
+- Solicit money from or defraud any other user.
+- Use any robot, spider, site search/retrieval application, or other manual or automatic device or process to retrieve, index, “data mine,” or in any way reproduce or circumvent the navigational structure or presentation of the Service or its contents.`
   },
   {
-    id: "service-and-fees",
-    title: "4. Service, Payments, and Refunds",
-    summary:
-      "We offer personalized matchmaking services for a fee. All payments are final and non-refundable.",
-    paragraphs: [
-      `${APP_NAME} provides premium, personalized matchmaking services. If you purchase a membership, you agree to our pricing and payment terms.`,
-      "Subscription fees are billed in advance and will auto-renew unless canceled. Due to the personalized nature of our work, all fees are non-refundable once service has begun.",
-    ],
+    heading: "4. Premium Services and Payments",
+    text: `We offer enhanced features and services for a fee ("Premium Services"). If you choose to purchase Premium Services, you agree to the pricing and payment terms. All fees are non-refundable. Payments are processed through our third-party payment processor. By providing a payment method, you expressly authorize us to charge the disclosed fees.`
   },
   {
-    id: "privacy-and-safety",
-    title: "5. Privacy and Safety",
-    summary:
-      "Your privacy is important to us. Please review our Privacy Policy. Always use caution when interacting with new people.",
-    paragraphs: [
-      "Your use of our service is also governed by our Privacy Policy, which details how we collect and use your data. We do not conduct criminal background checks on all users.",
-      "You are responsible for your own safety and should exercise caution when sharing personal information or meeting anyone in person.",
-    ],
+    heading: "5. Intellectual Property",
+    text: `The Service and its original content (excluding Content provided by users), features, and functionality are and will remain the exclusive property of ${COMPANY_NAME} and its licensors. The Service is protected by copyright, trademark, and other laws of both Thailand and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of ${COMPANY_NAME}.`
   },
   {
-    id: "disclaimers-and-liability",
-    title: "6. Disclaimers and Limitation of Liability",
-    summary:
-      "Our service is provided 'as is,' and we are not liable for any damages that may arise from your use of it.",
-    paragraphs: [
-      "The service is provided without warranties of any kind. We do not guarantee any specific matchmaking outcomes.",
-      `${COMPANY_NAME} will not be liable for any indirect, incidental, or consequential damages resulting from your use of the service or interactions with other members.`,
-    ],
+    heading: "6. Disclaimers",
+    text: `The Service is provided on an "AS IS" and "AS AVAILABLE" basis. ${APP_NAME} makes no warranties, expressed or implied, regarding the accuracy, reliability, or completeness of the service or the results of your use of the service. We do not conduct criminal background checks on our users but reserve the right to do so. We are not responsible for the conduct of any user.`
   },
   {
-    id: "termination",
-    title: "7. Termination",
-    summary:
-      "We reserve the right to terminate your account if you violate these terms.",
-    paragraphs: [
-      "We may suspend or terminate your account at any time without notice if we believe you have breached these Terms. Upon termination, your right to use the service will cease immediately.",
-    ],
+    heading: "7. Limitation of Liability",
+    text: `In no event shall ${COMPANY_NAME}, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage.`
   },
-]
+  {
+    heading: "8. Termination",
+    text: `We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the Service will immediately cease. If you wish to terminate your account, you may simply discontinue using the Service.`
+  },
+  {
+    heading: "9. Governing Law",
+    text: "These Terms shall be governed and construed in accordance with the laws of Thailand, without regard to its conflict of law provisions."
+  },
+  {
+    heading: "10. Changes to These Terms",
+    text: "We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion."
+  },
+  {
+    heading: "11. Contact Us",
+    text: `If you have any questions about these Terms, please contact us at: ${CONTACT.email}`
+  }
+];
 
 export default function TermsOfServicePage() {
   return (
     <PolicyPage
-      eyebrow="Legal / Terms of Service"
-      title="Terms that keep the process clear, private, and respectful"
-      description="These terms explain how our matchmaking service works, what is included in a membership, and how we protect the integrity of the process."
-      updatedOn={POLICY_UPDATED_ON}
-      summaryPoints={[
-        "Selective admissions",
-        "Private introductions",
-        "Transparent service fees",
-      ]}
-      sections={TERMS_SECTIONS}
-      contactTitle="Questions about the terms?"
-      contactDescription="Our team can explain the membership process, support options, and service boundaries before you enroll."
-      contactActions={[
-        {
-          label: "WhatsApp",
-          href: `https://wa.me/${CONTACT.whatsapp}`,
-          icon: "message",
-        },
-        {
-          label: "Email",
-          href: `mailto:${CONTACT.email}`,
-          icon: "mail",
-        },
-      ]}
+      title="Terms of Service"
+      content={TERMS_OF_SERVICE_CONTENT}
     />
   )
 }
