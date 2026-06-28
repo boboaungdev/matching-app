@@ -21,6 +21,14 @@ export default function HomePage() {
             <Button asChild size="lg">
               <Link href="/sign-up">Get Started</Link>
             </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="bg-transparent text-white transition-opacity hover:bg-white/10 hover:opacity-100"
+            >
+              <Link href="#gallery">Learn More</Link>
+            </Button>
           </div>
         </div>
       </section>
