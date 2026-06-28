@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
@@ -42,7 +44,7 @@ export function UserGallery() {
     async function fetchUsers() {
       try {
         const response = await fetch(
-          "https://randomuser.me/api/?results=20&gender=male&nat=us,gb,au,ca,nz,ie"
+          "https://randomuser.me/api/?results=20&gender=female&nat=us,gb,au,ca,nz,ie"
         )
         if (!response.ok) {
           throw new Error("Failed to fetch users")
