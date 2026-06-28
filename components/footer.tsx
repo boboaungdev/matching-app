@@ -1,35 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Mail, MessageCircle, ArrowUpRight } from "lucide-react"
+import { Mail, MessageCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { APP_NAME, CONTACT } from "@/constants"
-
-const SITE_NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
-  { label: "Service", href: "/#service" },
-  { label: "Gallery", href: "/#gallery" },
-] as const
-
-const SOCIAL_LINKS = [
-  {
-    label: "WhatsApp",
-    href: `https://wa.me/${CONTACT.whatsapp}`,
-    icon: "message",
-  },
-  {
-    label: "Email",
-    href: `mailto:${CONTACT.email}`,
-    icon: "mail",
-  },
-] as const
-
-const iconMap = {
-  message: MessageCircle,
-  mail: Mail,
-} as const
 
 export function Footer() {
   return (
@@ -52,8 +26,6 @@ export function Footer() {
                 </p>
               </div>
             </div>
-
-
 
             <div className="flex flex-wrap gap-2">
               <Button
