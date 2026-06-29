@@ -131,13 +131,13 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold tracking-tight">Meet the Team</h2>
           <div className="grid gap-8 md:grid-cols-3">
             <Card className="group relative flex flex-col items-center text-center shadow-lg transition-transform duration-300 hover:scale-105">
-              <Avatar size="lg" className="h-24 w-24 mt-6">
+              <Avatar className="h-24 w-24">
                 <AvatarImage src="https://github.com/shadcn.png" alt="Sham" />
                 <AvatarFallback>S</AvatarFallback>
               </Avatar>
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold whitespace-nowrap">Sham</CardTitle>
-                <CardDescription className="text-muted-foreground whitespace-nowrap">Co-Founder & CEO</CardDescription>
+              <CardHeader className="px-0">
+                <CardTitle className="text-xl font-semibold">Sham</CardTitle>
+                <CardDescription className="text-muted-foreground">Co-Founder & CEO</CardDescription>
               </CardHeader>
               <div className="absolute inset-0 flex items-center justify-center space-x-4 rounded-xl bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <Link href="#">
@@ -152,16 +152,16 @@ export default function AboutPage() {
               </div>
             </Card>
             <Card className="group relative flex flex-col items-center text-center shadow-lg transition-transform duration-300 hover:scale-105">
-              <Avatar size="lg" className="h-24 w-24 mt-6">
+              <Avatar className="h-24 w-24">
                 <AvatarImage
                   src="https://github.com/vercel.png"
                   alt="Jane Smith"
                 />
                 <AvatarFallback>JS</AvatarFallback>
               </Avatar>
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold whitespace-nowrap">Jane Smith</CardTitle>
-                <CardDescription className="text-muted-foreground whitespace-nowrap">Head of Matchmaking</CardDescription>
+              <CardHeader className="px-0">
+                <CardTitle className="text-xl font-semibold">Jane Smith</CardTitle>
+                <CardDescription className="text-muted-foreground">Head of Matchmaking</CardDescription>
               </CardHeader>
               <div className="absolute inset-0 flex items-center justify-center space-x-4 rounded-xl bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <Link href="#">
@@ -173,13 +173,13 @@ export default function AboutPage() {
               </div>
             </Card>
             <Card className="group relative flex flex-col items-center text-center shadow-lg transition-transform duration-300 hover:scale-105">
-              <Avatar size="lg" className="h-24 w-24 mt-6">
+              <Avatar className="h-24 w-24">
                 <AvatarImage src="https://github.com/next.png" alt="Bo Bo" />
                 <AvatarFallback>Bo Bo</AvatarFallback>
               </Avatar>
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold whitespace-nowrap">Bo Bo</CardTitle>
-                <CardDescription className="text-muted-foreground whitespace-nowrap">Lead Developer</CardDescription>
+              <CardHeader className="px-0">
+                <CardTitle className="text-xl font-semibold">Bo Bo</CardTitle>
+                <CardDescription className="text-muted-foreground">Lead Developer</CardDescription>
               </CardHeader>
               <div className="absolute inset-0 flex items-center justify-center space-x-4 rounded-xl bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <Link href="#">
