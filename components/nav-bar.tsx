@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
-import { Menu, ArrowUpRight, LogIn, UserPlus } from "lucide-react"
+import { Menu, ArrowUpRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
