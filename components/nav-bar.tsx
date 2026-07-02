@@ -43,13 +43,21 @@ export function NavBar() {
             className="size-10 shrink-0 rounded-2xl bg-background object-cover shadow-sm sm:size-11"
             priority
           />
-          <div className="min-w-0">
-            <p className="truncate text-sm leading-5 font-semibold sm:text-[15px]">
-              {APP_NAME}
-            </p>
-            <p className="truncate text-xs text-muted-foreground">
-              {APP_TAGLINE}
-            </p>
+          <div className="flex min-w-0 flex-col items-start">
+            <Image
+              src="/logo-name.png"
+              alt="Logo name"
+              width={180}
+              height={40}
+              className="h-auto w-auto"
+              priority
+            />
+            <div className="pl-1">
+              <p className="truncate text-xs text-[#c8a74d]">{APP_TAGLINE}</p>
+              <p className="truncate text-[11px] text-[#d96088]">
+                Dating in Thailand
+              </p>
+            </div>
           </div>
         </Link>
 
@@ -58,15 +66,33 @@ export function NavBar() {
             const active = pathname === item.href
 
             return (
-              <Button
+              <span
                 key={item.href}
-                asChild
-                variant={active ? "secondary" : "ghost"}
-                size="sm"
-                className={cn("rounded-full px-3", active && "text-foreground")}
+                className="rounded-full border border-pink-400 p-[0.5px]"
               >
-                <Link href={item.href}>{item.label}</Link>
-              </Button>
+                <span
+                  className={cn(
+                    "block rounded-full p-[0.5px]",
+                    active
+                      ? "border border-transparent"
+                      : "border border-amber-300"
+                  )}
+                >
+                  <Button
+                    asChild
+                    variant="ghost"
+                    size="sm"
+                    className={cn(
+                      "rounded-full px-2.5",
+                      active
+                        ? "bg-amber-200 text-slate-950"
+                        : "bg-background text-foreground"
+                    )}
+                  >
+                    <Link href={item.href}>{item.label}</Link>
+                  </Button>
+                </span>
+              </span>
             )
           })}
         </nav>
